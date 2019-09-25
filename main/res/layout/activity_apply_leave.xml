@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ApplyLeave"
+    tools:context="com.example.shivani.sample.ApplyLeave">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/apply_leave_card"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTheme"
+            >
+
+            <TextView
+                android:id="@+id/apply_leave_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="  Apply"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp"
+                android:drawableLeft="@drawable/icon_form"
+                android:paddingLeft="10dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <LinearLayout
+        android:id="@+id/to_from_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/apply_leave_card"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/from_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apply_leave_card"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_calendar"
+                android:hint="From :"
+                android:inputType="date"
+                android:padding="10dp"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/to_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apply_leave_card"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_calendar"
+                android:hint="To :"
+                android:inputType="date"
+                android:padding="10dp"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rad_grp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to_from_layout"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/fd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full day"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/hd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Half Day"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/number_contact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rad_grp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/no_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/to_from_layout"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/no_of_leaves"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="No.of leaves"
+                android:inputType="none"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contact_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/to_from_layout"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact no."
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textSize="15sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reason_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/number_contact_layout"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="23dp"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Reason for leave"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textSize="15sp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/address_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reason_label"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="22dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reason_label"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="5dp"
+            android:hint="Address"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_apply"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:gravity="center"
+        android:onClick="apply_function"
+        android:text="Apply"
+        app:cornerRadius="60dp" />
+
+
+</RelativeLayout>
